@@ -1,7 +1,35 @@
-# umairnawaz333
+# Portfolio - Muhammad Umair Nawaz
 
+A modern, responsive portfolio website built with React.js and Tailwind CSS.
 
+## Tech Stack
 
-### ♥ Like my works and want to support me?
-<a href="https://www.buymeacoffee.com/umairnawaz" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 162.75px !important;" ></a>
+- **React.js** - UI library
+- **Tailwind CSS** - Styling
+- **Vite** - Build tool and dev server
 
+## Development
+
+Install dependencies:
+```bash
+npm install
+```
+
+Run development server:
+```bash
+npm run dev
+```
+
+Build for production:
+```bash
+npm run build
+```
+
+Preview production build:
+```bash
+npm run preview
+```
+
+## Author
+
+Muhammad Umair Nawaz - Full Stack Software Engineer
