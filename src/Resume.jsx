@@ -89,7 +89,7 @@ function Resume() {
             projects: [
                 {
                     name: 'Quizpops',
-                    link: 'https://quizpops.com',
+                    link: 'https://play.google.com/store/apps/details?id=quizpops.exams.parent&hl=en',
                     description: 'Built and deployed the Flutter app to Google Play Store with full cross-platform support.',
                     highlights: [
                         'Integrated RESTful APIs for authentication, quizzes, results, and student activity.',

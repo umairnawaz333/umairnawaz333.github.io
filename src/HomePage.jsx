@@ -20,7 +20,7 @@ function HomePage() {
                     name: 'Lula Commerce',
                     link: 'https://www.lulacommerce.com/',
                     description: 'Built and maintained a microservices architecture using Node.js/NestJS while developing optimized RESTful APIs for modular services including catalog, checkout, and order management.',
-                    image: '/placeholder-lula-commerce.jpg',
+                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://www.lulacommerce.com',
                     highlights: [
                         'Integrated third-party delivery platforms such as UberEats, DoorDash, and Grubhub to sync menus, manage incoming orders, update order statuses, and streamline end-to-end eCommerce operations.',
                         'Integrated React/Next.js front-end modules with microservices through secure API gateways.',
@@ -32,7 +32,7 @@ function HomePage() {
                     name: 'Mental Health Match',
                     link: 'https://mentalhealthmatch.com/',
                     description: 'Created Node.js backend services to support therapist-client matching logic.',
-                    image: '/placeholder-mental-health-match.jpg',
+                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://mentalhealthmatch.com',
                     highlights: [
                         'Built SEO-optimized Next.js pages, ensuring fast SSR/ISR and improved Google crawl ranking.',
                         'Designed and tuned PostgreSQL queries for user profiles and search filters.',
@@ -44,7 +44,7 @@ function HomePage() {
                     name: 'Mapforce',
                     link: 'https://mapforce.io/',
                     description: 'Developed Node.js backend to manage multi-business operations, syncing data with Firebase Realtime Database.',
-                    image: '/placeholder-mapforce.jpg',
+                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://mapforce.io',
                     highlights: [
                         'Integrated Google Business API to manage multiple business locations from a single platform (photos upload, business details update, hours/time changes, scheduled updates, video uploads).',
                         'Implemented Firebase Auth for secure login, role-based access, and session handling.',
@@ -57,7 +57,7 @@ function HomePage() {
                     name: 'BlueCord',
                     link: 'https://bluecord.com',
                     description: 'Developed Django backend with GraphQL schema (queries/mutations) to support CRM workflows.',
-                    image: '/placeholder-bluecord.jpg',
+                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://bluecord.com',
                     highlights: [
                         'Integrated React.js components consuming GraphQL APIs for dynamic data rendering.',
                         'Designed and optimized PostgreSQL database models and relationships.',
@@ -69,7 +69,7 @@ function HomePage() {
                     name: 'CoinStackers.io',
                     link: 'https://coinstackers.io',
                     description: 'Developed Node.js services for tracking leads, user funnels, and data analytics.',
-                    image: '/placeholder-coinstackers.jpg',
+                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://coinstackers.io',
                     highlights: [
                         'Integrated Mongoose for schema-based modeling and optimized NoSQL queries.',
                         'Built React.js interfaces for dashboards and lead insights.',
@@ -80,7 +80,7 @@ function HomePage() {
                     name: 'TrackHabit',
                     link: 'https://trackhabit.io',
                     description: 'Built React.js UI for managing habits, progress logs, and task automation flows.',
-                    image: '/placeholder-trackhabit.jpg',
+                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://trackhabit.io',
                     highlights: [
                         'Integrated FastAPI backend for habit tracking, scheduling, and data operations.',
                         'Connected ChatGPT APIs to generate AI-driven tasks based on user-selected timelines.',
@@ -97,7 +97,7 @@ function HomePage() {
             projects: [
                 {
                     name: 'Quizpops',
-                    link: 'https://quizpops.com',
+                    link: 'https://play.google.com/store/apps/details?id=quizpops.exams.parent&hl=en',
                     description: 'Built and deployed the Flutter app to Google Play Store with full cross-platform support.',
                     image: '/placeholder-quizpops.jpg',
                     highlights: [
