@@ -144,7 +144,7 @@ function HomePage() {
                             <img 
                                 src="/umair logo.png" 
                                 alt="Umair Nawaz" 
-                                className="h-10 md:h-12 w-auto"
+                                className="h-14 md:h-18 w-auto"
                             />
                         </button>
 
