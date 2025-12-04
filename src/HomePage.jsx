@@ -1,6 +1,23 @@
 import { ContactUs } from './ContactUs';
+import { useState } from 'react';
 
 function HomePage() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const headerOffset = 90; // Header height (h-20 = 80px)
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+            setMobileMenuOpen(false);
+        }
+    };
     const skills = {
         frontend: ['React.js', 'Redux', 'Next.js', 'Tailwind CSS', 'Mantine', 'Material-UI', 'React Router', 'React Query', 'Zustand', 'React Hook Form', 'Storybook', 'chakra UI'],
         backend: ['JavaScript (ES6+)', 'TypeScript', 'Node.js', 'NestJS', 'Microservices', 'Monolithic Architectures', 'RESTful APIs', 'GraphQL (Queries, Mutations, Resolvers)', 'TypeORM', 'Prisma ORM', 'Sequelize', 'Webhooks', 'Event-Driven Systems', 'WebSockets', 'FastAPI', 'Django'],
@@ -113,9 +130,90 @@ function HomePage() {
 
     return (
         <div className="min-h-screen bg-white">
+            {/* Header Navigation */}
+            <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+                <nav className="max-w-7xl mx-auto px-6 md:px-8">
+                    <div className="flex items-center justify-between h-20">
+                        {/* Logo */}
+                        <button 
+                            onClick={() => scrollToSection('hero')}
+                            className="flex items-center"
+                        >
+                            <img 
+                                src="/umair nawaz web logo.png" 
+                                alt="Umair Nawaz" 
+                                className="h-12 md:h-14 w-auto"
+                            />
+                        </button>
+
+                        {/* Desktop Navigation */}
+                        <div className="hidden md:flex items-center gap-8">
+                            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                                About
+                            </button>
+                            <button onClick={() => scrollToSection('skills')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                                Skills
+                            </button>
+                            <button onClick={() => scrollToSection('experience')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                                Experience
+                            </button>
+                            <button onClick={() => scrollToSection('education')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+                                Education
+                            </button>
+                            <button 
+                                onClick={() => scrollToSection('contact')} 
+                                className="bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors font-medium"
+                            >
+                                Contact
+                            </button>
+                        </div>
+
+                        {/* Mobile Menu Button */}
+                        <button 
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden p-2 text-gray-700"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {mobileMenuOpen ? (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                ) : (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                )}
+                            </svg>
+                        </button>
+                    </div>
+
+                    {/* Mobile Navigation */}
+                    {mobileMenuOpen && (
+                        <div className="md:hidden py-4 border-t border-gray-200">
+                            <div className="flex flex-col gap-4">
+                                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors text-left">
+                                    About
+                                </button>
+                                <button onClick={() => scrollToSection('skills')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors text-left">
+                                    Skills
+                                </button>
+                                <button onClick={() => scrollToSection('experience')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors text-left">
+                                    Experience
+                                </button>
+                                <button onClick={() => scrollToSection('education')} className="text-gray-700 hover:text-gray-900 font-medium transition-colors text-left">
+                                    Education
+                                </button>
+                                <button 
+                                    onClick={() => scrollToSection('contact')} 
+                                    className="bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors font-medium text-left"
+                                >
+                                    Contact
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                </nav>
+            </header>
+
             <main className="max-w-7xl m-auto px-6 md:px-8 py-12 md:py-16">
                 {/* Hero Section */}
-                <section className="text-center mb-16 md:mb-24">
+                <section id="hero" className="text-center mb-16 md:mb-24">
                     <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-900 leading-tight">
                         Muhammad Umair Nawaz
                     </h1>
@@ -123,21 +221,36 @@ function HomePage() {
                         Full Stack Software Engineer
                     </p>
                     <div className="flex flex-wrap justify-center gap-6 text-gray-600 text-sm md:text-base">
-                        <a href="mailto:umair.nawaz1997@gmail.com" className="hover:text-gray-900 transition-colors">
+                        <a href="mailto:umair.nawaz1997@gmail.com" className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                            </svg>
                             umair.nawaz1997@gmail.com
                         </a>
-                        <a href="tel:+923322253600" className="hover:text-gray-900 transition-colors">
+                        <a href="tel:+923322253600" className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
                             +92 332 2253600
                         </a>
-                        <a href="https://www.linkedin.com/in/iamumairnawaz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors">
-                            LinkedIn
+                        <a href="https://www.linkedin.com/in/iamumairnawaz" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-gray-900 transition-colors">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
+                            </svg>
+                            iamumairnawaz
                         </a>
-                        <span>Lahore</span>
+                        <span className="flex items-center gap-2">
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                            </svg>
+                            Lahore
+                        </span>
                     </div>
                 </section>
 
                 {/* About Section */}
-                <section className="mb-16 md:mb-24">
+                <section id="about" className="mb-16 md:mb-24">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About</h2>
                     <p className="text-lg text-gray-700 leading-relaxed">
                         Backend-Heavy Full Stack Engineer with 5+ years of experience building scalable systems for Digital Commerce and SaaS products.
@@ -149,7 +262,7 @@ function HomePage() {
                 </section>
 
                 {/* Skills Section */}
-                <section className="mb-16 md:mb-24">
+                <section id="skills" className="mb-16 md:mb-24">
                     <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Skills</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="bg-gray-50 p-6 rounded-lg">
@@ -186,7 +299,7 @@ function HomePage() {
                 </section>
 
                 {/* Professional Experience & Projects Section */}
-                <section className="mb-16 md:mb-24">
+                <section id="experience" className="mb-16 md:mb-24">
                     <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Professional Experience & Projects</h2>
                     <div className="space-y-12">
                         {experience.map((job, idx) => (
@@ -247,7 +360,7 @@ function HomePage() {
                 </section>
 
                 {/* Education Section */}
-                <section className="mb-16 md:mb-24">
+                <section id="education" className="mb-16 md:mb-24">
                     <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Education</h2>
                     <div className="bg-gray-50 p-6 md:p-8 rounded-lg">
                         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
@@ -271,7 +384,7 @@ function HomePage() {
                 </section>
 
                 {/* Contact Form Section */}
-                <section className="mb-16 md:mb-24">
+                <section id="contact" className="mb-16 md:mb-24">
                     <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900 text-center">Get In Touch</h2>
                     <ContactUs />
                 </section>
