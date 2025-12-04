@@ -20,7 +20,7 @@ function HomePage() {
                     name: 'Lula Commerce',
                     link: 'https://www.lulacommerce.com/',
                     description: 'Built and maintained a microservices architecture using Node.js/NestJS while developing optimized RESTful APIs for modular services including catalog, checkout, and order management.',
-                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://www.lulacommerce.com',
+                    image: 'https://api.screenshotmachine.com/?key=0a4873&url=https://www.lulacommerce.com&dimension=1280x720',
                     highlights: [
                         'Integrated third-party delivery platforms such as UberEats, DoorDash, and Grubhub to sync menus, manage incoming orders, update order statuses, and streamline end-to-end eCommerce operations.',
                         'Integrated React/Next.js front-end modules with microservices through secure API gateways.',
@@ -32,32 +32,33 @@ function HomePage() {
                     name: 'Mental Health Match',
                     link: 'https://mentalhealthmatch.com/',
                     description: 'Created Node.js backend services to support therapist-client matching logic.',
-                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://mentalhealthmatch.com',
+                    image: 'https://api.screenshotmachine.com/?key=0a4873&url=https://mentalhealthmatch.com&dimension=1280x720',
                     highlights: [
                         'Built SEO-optimized Next.js pages, ensuring fast SSR/ISR and improved Google crawl ranking.',
                         'Designed and tuned PostgreSQL queries for user profiles and search filters.',
                         'Developed responsive UI components with Tailwind.',
-                        'Improved overall site visibility through structured data and crawl-friendly routing.'
+                        'Improved overall site visibility through structured data and crawl-friendly routing.',
+                        'implement nextjs parallel routes for improved performance and SEO',
+                        'implement nextjs image optimization',
                     ]
                 },
                 {
                     name: 'Mapforce',
                     link: 'https://mapforce.io/',
                     description: 'Developed Node.js backend to manage multi-business operations, syncing data with Firebase Realtime Database.',
-                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://mapforce.io',
+                    image: 'https://api.screenshotmachine.com/?key=0a4873&url=https://mapforce.io&dimension=1280x720',
                     highlights: [
                         'Integrated Google Business API to manage multiple business locations from a single platform (photos upload, business details update, hours/time changes, scheduled updates, video uploads).',
-                        'Implemented Firebase Auth for secure login, role-based access, and session handling.',
-                        'Built React.js UI for business dashboards, live updates, and operational controls.',
+                        'Implemented Firebase Auth for secure login and session handling.',
                         'Utilized Firebase Realtime Database for real-time business state updates and synchronized client views.',
-                        'Implemented Google Cloud Scheduler + Queues for automated background jobs, cron-based updates, and asynchronous processing.'
+                        'Implemented Google Cloud Scheduler + Queues for automated background jobs and cron-based updates.'
                     ]
                 },
                 {
                     name: 'BlueCord',
-                    link: 'https://bluecord.com',
+                    link: 'https://www.bluecord.com/',
                     description: 'Developed Django backend with GraphQL schema (queries/mutations) to support CRM workflows.',
-                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://bluecord.com',
+                    image: 'https://api.screenshotmachine.com/?key=0a4873&url=https://www.bluecord.com&dimension=1280x720',
                     highlights: [
                         'Integrated React.js components consuming GraphQL APIs for dynamic data rendering.',
                         'Designed and optimized PostgreSQL database models and relationships.',
@@ -67,9 +68,9 @@ function HomePage() {
                 },
                 {
                     name: 'CoinStackers.io',
-                    link: 'https://coinstackers.io',
+                    link: 'https://www.coinstackers.io',
                     description: 'Developed Node.js services for tracking leads, user funnels, and data analytics.',
-                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://coinstackers.io',
+                    image: 'https://api.screenshotmachine.com/?key=0a4873&url=https://www.coinstackers.io&dimension=1280x720&delay=1000',
                     highlights: [
                         'Integrated Mongoose for schema-based modeling and optimized NoSQL queries.',
                         'Built React.js interfaces for dashboards and lead insights.',
@@ -80,7 +81,7 @@ function HomePage() {
                     name: 'TrackHabit',
                     link: 'https://trackhabit.io',
                     description: 'Built React.js UI for managing habits, progress logs, and task automation flows.',
-                    image: 'https://image.thum.io/get/width/1200/crop/675/noanimate/https://trackhabit.io',
+                    image: 'https://api.screenshotmachine.com/?key=0a4873&url=https://trackhabit.io&dimension=1280x720',
                     highlights: [
                         'Integrated FastAPI backend for habit tracking, scheduling, and data operations.',
                         'Connected ChatGPT APIs to generate AI-driven tasks based on user-selected timelines.',
@@ -99,7 +100,7 @@ function HomePage() {
                     name: 'Quizpops',
                     link: 'https://play.google.com/store/apps/details?id=quizpops.exams.parent&hl=en',
                     description: 'Built and deployed the Flutter app to Google Play Store with full cross-platform support.',
-                    image: '/placeholder-quizpops.jpg',
+                    image: 'https://api.screenshotmachine.com/?key=0a4873&url=https://play.google.com/store/apps/details?id=quizpops.exams.parent&hl=en&dimension=1280x720',
                     highlights: [
                         'Integrated RESTful APIs for authentication, quizzes, results, and student activity.',
                         'Implemented parent-side features for viewing quiz history, attendance, performance reports, and secure communication with teachers.',
@@ -212,18 +213,12 @@ function HomePage() {
                                     {job.projects.map((project, pIdx) => (
                                         <div key={pIdx} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
                                             <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                                <div className="w-full h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
+                                                <div className="w-full aspect-video bg-gray-200 flex items-center justify-center overflow-hidden">
                                                     <img 
                                                         src={project.image} 
                                                         alt={project.name}
                                                         className="w-full h-full object-cover"
-                                                        onError={(e) => {
-                                                            e.target.style.display = 'none';
-                                                        }}
                                                     />
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500">
-                                                        <span className="text-sm font-medium">{project.name}</span>
-                                                    </div>
                                                 </div>
                                             </a>
                                             <div className="p-6">
