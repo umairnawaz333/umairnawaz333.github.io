@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && git add . && git commit -m 'deployed to github pages' && git push"
+    "deploy": "npm run build"
   },
   "repository": {
     "type": "git",
