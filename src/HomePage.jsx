@@ -7,7 +7,9 @@ function HomePage() {
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            const headerOffset = 90; // Header height (h-20 = 80px)
+            // Use larger offset for mobile (768px is md: breakpoint in Tailwind)
+            const isMobile = window.innerWidth < 768;
+            const headerOffset = isMobile ? 120 : 90;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
