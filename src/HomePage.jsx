@@ -140,9 +140,9 @@ function HomePage() {
                             className="flex items-center"
                         >
                             <img 
-                                src="/umair nawaz web logo.png" 
+                                src="/umair logo.png" 
                                 alt="Umair Nawaz" 
-                                className="h-12 md:h-14 w-auto"
+                                className="h-10 md:h-12 w-auto"
                             />
                         </button>
 
