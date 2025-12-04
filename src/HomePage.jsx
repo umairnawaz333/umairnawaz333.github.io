@@ -9,7 +9,7 @@ function HomePage() {
         if (element) {
             // Use larger offset for mobile (768px is md: breakpoint in Tailwind)
             const isMobile = window.innerWidth < 768;
-            const headerOffset = isMobile ? 120 : 90;
+            const headerOffset = isMobile ? 330 : 90;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
